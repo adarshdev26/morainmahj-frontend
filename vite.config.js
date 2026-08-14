@@ -7,7 +7,6 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, import.meta.dirname, ['VITE_', 'REACT_APP_'])
 
   return {
-    logLevel: 'error', // Suppress warnings, only show errors
     // REACT_APP_* is not a Vite convention, but the backend config is documented
     // under that name, so both prefixes are exposed on import.meta.env.
     envPrefix: ['VITE_', 'REACT_APP_'],
