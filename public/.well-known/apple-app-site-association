@@ -1,0 +1,24 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "95582QX4SJ.com.base69de6b05c2b11218fcffdf31.app",
+        "paths": [
+          "/app",
+          "/app/*",
+          "/admin",
+          "/admin/*",
+          "/tournament/*",
+          "/player-signup",
+          "/player-signup/*",
+          "/league-rsvp",
+          "/league-join",
+          "/checkin",
+          "/mobile-payment-return",
+          "/mobile-payment-return/*"
+        ]
+      }
+    ]
+  }
+}

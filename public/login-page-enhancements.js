@@ -1,0 +1,13 @@
+(function(){if(window.__morainmahjLoginEnhancements)return;window.__morainmahjLoginEnhancements=true;
+
+// Detect native: either Capacitor bridge is present OR URL has ?native=1
+var isNative=!!(window.Capacitor&&window.Capacitor.isNativePlatform&&window.Capacitor.isNativePlatform());
+if(!isNative){try{isNative=new URLSearchParams(window.location.search).get("native")==="1"}catch(e){}}
+
+function homeUrl(){if(!isNative)return window.location.origin+"/";var platform=(window.Capacitor&&window.Capacitor.getPlatform&&window.Capacitor.getPlatform())||"";return platform==="android"?"https://localhost/":"capacitor://localhost/"}
+
+function injectBack(){if(document.getElementById("morainmahj-login-back"))return;var b=document.createElement("button");b.id="morainmahj-login-back";b.type="button";b.setAttribute("aria-label","Back to home");b.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span>Back</span>';b.style.cssText="position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:12px;z-index:99999;display:flex;align-items:center;gap:4px;padding:8px 10px;font-size:14px;line-height:1;color:#64748b;background:transparent;border:none;border-radius:8px;cursor:pointer;font-family:system-ui,-apple-system,sans-serif;";b.onmouseenter=function(){b.style.color="#0f172a"};b.onmouseleave=function(){b.style.color="#64748b"};b.onclick=function(e){e.preventDefault();window.location.href=homeUrl()};(document.body||document.documentElement).appendChild(b)}
+
+function hideSocial(){if(!isNative)return;if(document.getElementById("morainmahj-hide-native-oauth"))return;var s=document.createElement("style");s.id="morainmahj-hide-native-oauth";s.textContent='a[href*="/api/apps/auth/login"],a[href*="/api/apps/auth/google/login"],a[href*="/api/apps/auth/microsoft/login"],a[href*="/api/apps/auth/apple/login"]{display:none!important}';(document.head||document.documentElement).appendChild(s);function h(){var r=/^(Continue with|Log in with|Sign in with) (Google|Microsoft|Apple)\s*$/i;document.querySelectorAll("button,a").forEach(function(e){var t=(e.textContent||"").replace(/\s+/g," ").trim();if(r.test(t))e.style.setProperty("display","none","important")})}h();try{new MutationObserver(h).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}}
+
+function run(){injectBack();hideSocial()}run();try{new MutationObserver(run).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}})();

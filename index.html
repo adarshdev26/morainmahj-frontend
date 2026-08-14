@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='60' r='60' fill='white'/%3E%3Crect x='60' y='4' width='79' height='79' transform='rotate(45 60 4)' stroke='%231e2d4d' stroke-width='2' fill='none'/%3E%3Crect x='60' y='16' width='62' height='62' transform='rotate(45 60 16)' stroke='%231e2d4d' stroke-width='1' fill='none'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-weight='300' font-size='52' fill='%231e2d4d'%3EM%3C/text%3E%3C/svg%3E" />
+
+    <!-- Viewport (Capacitor / mobile shell) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Force light color scheme — prevents Android/Chrome Force Dark from
+         inverting app colors when the phone is in system dark mode. -->
+    <meta name="color-scheme" content="light only" />
+
+    <!-- PWA / iOS Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Morain Mahj" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#1e2d4d" />
+    
+    <!-- Capacitor: Allow universal links and custom URL schemes -->
+    <meta name="deeplink-scheme" content="morainmahj://" />
+    <link rel="canonical" href="https://app.morainmahj.com/" />
+
+    <!-- iOS Splash Screens (portrait) -->
+    <!-- iPhone 16 Pro Max -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1320' height='2868'%3E%3Crect width='1320' height='2868' fill='%231e2d4d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='200' fill='%23c5a95a'%3EM%3C/text%3E%3C/svg%3E" />
+    <!-- iPhone 15 Pro / 14 Pro -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1179' height='2556'%3E%3Crect width='1179' height='2556' fill='%231e2d4d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='200' fill='%23c5a95a'%3EM%3C/text%3E%3C/svg%3E" />
+    <!-- iPhone 14 / 13 / 12 -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1170' height='2532'%3E%3Crect width='1170' height='2532' fill='%231e2d4d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='200' fill='%23c5a95a'%3EM%3C/text%3E%3C/svg%3E" />
+    <!-- iPhone SE / 8 -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='750' height='1334'%3E%3Crect width='750' height='1334' fill='%231e2d4d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-size='160' fill='%23c5a95a'%3EM%3C/text%3E%3C/svg%3E" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='180' height='180' rx='40' fill='%231e2d4d'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia%2C serif' font-weight='300' font-size='110' fill='%23c5a95a'%3EM%3C/text%3E%3C/svg%3E" />
+
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- ── Primary SEO Meta Tags ── -->
+    <title>Morain Mahj — Mah Jongg Tournament & League Management App</title>
+    <meta name="title" content="Morain Mahj — Mah Jongg Tournament & League Management App" />
+    <meta name="description" content="The all-in-one platform for American Mah Jongg tournaments, leagues, and classes. Player registration, table assignments, scorekeeping, leaderboards, raffles, and club management — all in one elegant app." />
+    <meta name="keywords" content="mah jong, mahjong, mah jongg, american mahjong, american mah jongg, nmjl, national mah jongg league, mah jong tournament, mahjong tournament, mah jong league, mahjong league, tournament management, league management, mahjong scoring, player rankings, elo rankings, tournament software, club management" />
+    <meta name="author" content="Morain Mahj" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="application-name" content="Morain Mahj" />
+    <meta name="apple-mobile-web-app-title" content="Morain Mahj" />
+
+    <!-- ── Canonical URL ── -->
+    <link rel="canonical" href="https://morainmahj.com/" />
+
+    <!-- ── Open Graph / Facebook ── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Morain Mahj" />
+    <meta property="og:url" content="https://morainmahj.com/" />
+    <meta property="og:title" content="Morain Mahj — Mah Jongg Tournament & League Management App" />
+    <meta property="og:description" content="The all-in-one platform for American Mah Jongg tournaments, leagues, and classes. Registration, scoring, leaderboards, and club management — all in one elegant app." />
+    <meta property="og:image" content="https://morainmahj.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Morain Mahj — Mah Jongg Tournament & League Management App" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ── Twitter Card ── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Morain Mahj — Mah Jongg Tournament & League Management App" />
+    <meta name="twitter:description" content="The all-in-one platform for American Mah Jongg tournaments, leagues, and classes. Registration, scoring, leaderboards, and club management — all in one elegant app." />
+    <meta name="twitter:image" content="https://morainmahj.com/og-image.png" />
+    <meta name="twitter:image:alt" content="Morain Mahj — Mah Jongg Tournament & League Management App" />
+
+    <!-- ── Structured Data: Organization + SoftwareApplication (JSON-LD) ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://morainmahj.com/#organization",
+          "name": "Morain Mahj",
+          "url": "https://morainmahj.com/",
+          "description": "The all-in-one platform for American Mah Jongg tournament, league, and class management.",
+          "logo": "https://morainmahj.com/apple-touch-icon.png"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Morain Mahj",
+          "applicationCategory": "SportsApplication",
+          "operatingSystem": "iOS, Android, Web",
+          "url": "https://morainmahj.com/",
+          "description": "Tournament, league, and class management platform for American Mah Jongg. Handles player registration, table assignments, scorekeeping with negative scoring, East player verification, leaderboards, raffles, and club management.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "1"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://morainmahj.com/#website",
+          "url": "https://morainmahj.com/",
+          "name": "Morain Mahj",
+          "publisher": { "@id": "https://morainmahj.com/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://morainmahj.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script>
+      (function () {
+        var path = window.location.pathname.toLowerCase();
+        if (path !== '/login' && !path.endsWith('/login')) return;
+        var s = document.createElement('script');
+        s.src = '/login-page-enhancements.js';
+        s.async = true;
+        (document.head || document.documentElement).appendChild(s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

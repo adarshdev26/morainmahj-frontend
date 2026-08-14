@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /admin/
+Disallow: /checkin
+Disallow: /mobile-auth-return
+Disallow: /mobile-payment-return
+Disallow: /course-payment-return
+Disallow: /native-login
+
+# Allow public marketing and event pages to be indexed
+Allow: /$
+Allow: /about
+Allow: /how-it-works
+Allow: /features
+Allow: /players
+Allow: /organizers
+Allow: /clubs-associations
+Allow: /white-label
+Allow: /faq
+Allow: /contact
+Allow: /start-free-trial
+Allow: /pricing
+Allow: /privacy
+Allow: /terms
+Allow: /support
+Allow: /business-plan
+
+# Public event websites
+Allow: /tournament/
+Allow: /league/
+Allow: /course/
+
+# Block API and utility paths
+Disallow: /*?access_token=
+Disallow: /api/
+
+Sitemap: https://morainmahj.com/sitemap.xml

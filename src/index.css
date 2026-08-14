@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Opt out of OS dark mode — this app manages its own theme.
+       Prevents Android Force Dark and iOS dark mode from inverting colors. */
+    color-scheme: light only;
+
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --background: 40 33% 96%;
+    --foreground: 220 40% 20%;
+    --card: 40 33% 98%;
+    --card-foreground: 220 40% 20%;
+    --popover: 40 33% 98%;
+    --popover-foreground: 220 40% 20%;
+    --primary: 220 40% 20%;
+    --primary-foreground: 40 33% 96%;
+    --secondary: 0 25% 85%;
+    --secondary-foreground: 220 40% 20%;
+    --muted: 40 20% 92%;
+    /* Light mode: 50% lightness on white bg = ~4.6:1 contrast (WCAG AA) */
+    --muted-foreground: 220 15% 42%;
+    --accent: 0 25% 85%;
+    --accent-foreground: 220 40% 20%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 220 40% 20%;
+    --chart-1: 220 40% 20%;
+    --chart-2: 43 50% 65%;
+    --chart-3: 0 25% 75%;
+    --chart-4: 0 72% 51%;
+    --chart-5: 216 30% 55%;
+    --radius: 0.25rem;
+    --sidebar-background: 220 40% 20%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 43 50% 65%;
+    --sidebar-primary-foreground: 220 40% 15%;
+    --sidebar-accent: 220 35% 28%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 220 35% 30%;
+    --sidebar-ring: 43 50% 65%;
+  }
+
+  .dark {
+    --background: 220 40% 8%;
+    --foreground: 40 33% 96%;
+    --card: 220 38% 12%;
+    --card-foreground: 40 33% 96%;
+    --popover: 220 38% 12%;
+    --popover-foreground: 40 33% 96%;
+    --primary: 40 33% 96%;
+    --primary-foreground: 220 40% 20%;
+    --secondary: 220 35% 20%;
+    --secondary-foreground: 40 33% 90%;
+    --muted: 220 30% 16%;
+    /* Raised from 60% to 68% lightness → contrast ≥ 4.5:1 on dark bg (WCAG AA) */
+    --muted-foreground: 40 15% 68%;
+    --accent: 0 25% 70%;
+    --accent-foreground: 220 40% 20%;
+    /* Raised destructive lightness so text stays readable on dark bg */
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 30% 22%;
+    --input: 220 30% 22%;
+    --ring: 40 33% 80%;
+    --chart-1: 43 50% 65%;
+    --chart-2: 0 25% 70%;
+    --chart-3: 216 30% 55%;
+    --chart-4: 0 65% 50%;
+    --chart-5: 280 50% 60%;
+    --sidebar-background: 220 45% 10%;
+    --sidebar-foreground: 40 33% 96%;
+    --sidebar-primary: 43 50% 65%;
+    --sidebar-primary-foreground: 220 40% 15%;
+    --sidebar-accent: 220 38% 18%;
+    --sidebar-accent-foreground: 40 33% 96%;
+    --sidebar-border: 220 35% 20%;
+    --sidebar-ring: 43 50% 65%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  /* Prevent ALL platforms from inflating/deflating font sizes */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+    /* Prevent iOS rubber-band / bounce scroll */
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /* Minimum 14px body text on all devices (WCAG mobile guideline) */
+    font-size: max(14px, 1rem);
+  }
+
+  /* Scrollable root — all scrolling happens inside #root */
+  #root {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    /* momentum-based scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Safe area support — --safe-area-top has an Android fallback when env() is 0 */
+  :root {
+    --safe-area-top: env(safe-area-inset-top, 0px);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-left: env(safe-area-inset-left, 0px);
+    --safe-area-right: env(safe-area-inset-right, 0px);
+  }
+
+  html.capacitor-native.platform-android {
+    --safe-area-top: env(safe-area-inset-top, 28px);
+  }
+
+  .safe-top { padding-top: var(--safe-area-top); }
+  .safe-bottom { padding-bottom: var(--safe-area-bottom); }
+
+  /* Standard insets for AppLayout scroll content */
+  .app-layout-insets {
+    padding-top: calc(var(--safe-area-top) + 12px);
+    padding-left: max(1rem, var(--safe-area-left));
+    padding-right: max(1rem, var(--safe-area-right));
+  }
+
+  /* Disable text selection on interactive UI elements */
+  button, a, nav, [role="tab"], [role="button"] {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Minimum 44px touch targets (WCAG 2.5.5) */
+  button, a[href], [role="button"] {
+    min-height: 44px;
+  }
+
+  /* ── Focus-visible: keyboard-only ring (WCAG 2.4.7) ── */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: var(--radius);
+  }
+
+  /* Screen-reader-only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Capacitor iOS: horizontal + bottom safe area (top inset handled per-layout) */
+  body.capacitor-native.platform-ios {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* ── Android-specific fixes ── */
+  /* .platform-android is added to both <html> and <body> in main.jsx */
+  body.platform-android {
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+    padding-bottom: 0;
+  }
+
+  /* On Android, 100vh includes the system navigation bar which compresses layout. */
+  html.platform-android .min-h-screen {
+    min-height: 100%;
+  }
+
+  html.platform-android .h-screen {
+    height: 100%;
+  }
+
+  /* Ensure bottom tab nav clears Android gesture nav bar */
+  html.platform-android nav[class*="fixed bottom"] {
+    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+  }
+
+  /* ── Native app shell layout (Capacitor only — no effect on website) ── */
+  html.capacitor-native {
+    --app-bottom-nav-offset: calc(72px + max(env(safe-area-inset-bottom), 8px));
+  }
+
+  /* AppLayout outlet: let each page control its own scroll so headers stay fixed */
+  html.capacitor-native .native-app-layout-outlet {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  /* Page shell: full-height column with fixed header + scrollable body */
+  html.capacitor-native .native-app-shell {
+    height: 100%;
+    min-height: 0 !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+  html.capacitor-native .native-app-header,
+  html.capacitor-native .native-app-subheader {
+    flex-shrink: 0;
+  }
+
+  html.capacitor-native .native-app-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Bottom padding so content clears the fixed tab bar */
+  html.capacitor-native .native-bottom-scroll-pad {
+    padding-bottom: var(--app-bottom-nav-offset);
+  }
+
+  /* Web/mobile: restore pre-native bottom clearance below the tab bar */
+  @media (max-width: 1023px) {
+    html:not(.capacitor-native) .web-bottom-scroll-pad-lg {
+      padding-bottom: 7.5rem;
+    }
+    html:not(.capacitor-native) .web-bottom-scroll-pad-md {
+      padding-bottom: 7rem;
+    }
+    html:not(.capacitor-native) .web-bottom-scroll-pad-sm {
+      padding-bottom: 2rem;
+    }
+  }
+
+  /* Fallback sticky headers for pages that scroll as one block */
+  html.capacitor-native .native-sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: hsl(var(--background));
+  }
+
+  html.capacitor-native .native-sticky-header-primary {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: hsl(var(--primary));
+  }
+
+  /* League session cards: stack title and actions to prevent overlap */
+  html.capacitor-native .session-card-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  html.capacitor-native .session-card-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  /* Full-screen overlays must sit above the bottom tab bar (z-9999) */
+  .native-fullscreen-overlay {
+    z-index: 50;
+  }
+
+  html.capacitor-native .native-fullscreen-overlay {
+    z-index: 10000 !important;
+  }
+
+  /* ── Mobile: prevent font size inflation on non-Android ── */
+  @media screen and (max-width: 768px) {
+    .text-xs  { font-size: 0.75rem; }
+    .text-sm  { font-size: max(14px, 0.875rem); }
+  }
+}
+
+/* ── Rich text editor (react-quill) ── */
+.quill-wrapper .ql-editor {
+  min-height: 160px;
+  font-size: 14px;
+}
+.quill-wrapper .ql-toolbar.ql-snow {
+  border: 1px solid hsl(var(--border));
+  border-bottom: none;
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 6px 8px;
+}
+.quill-wrapper .ql-container.ql-snow {
+  border: 1px solid hsl(var(--border));
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.quill-wrapper .ql-toolbar.ql-snow button,
+.quill-wrapper .ql-snow .ql-picker-label {
+  min-height: auto !important;
+  height: 26px !important;
+  width: auto !important;
+  padding: 2px 4px !important;
+}
+.quill-wrapper .ql-toolbar.ql-snow .ql-stroke {
+  stroke-width: 1.5 !important;
+}
+.quill-wrapper .ql-toolbar.ql-snow .ql-fill {
+  fill: currentColor !important;
+}
+.quill-wrapper .ql-snow .ql-picker {
+  font-size: 13px !important;
+}
+.quill-wrapper .ql-snow.ql-toolbar button svg,
+.quill-wrapper .ql-snow .ql-icon-picker svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Native Landing Hero Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Inter:wght@300;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, sans-serif; background: #111; display: flex; justify-content: center; padding: 24px; }
+    .phone {
+      width: 390px; max-width: 100%; min-height: 844px;
+      background: hsl(220 40% 20%);
+      position: relative; overflow: hidden;
+      border-radius: 40px; box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+    .pattern {
+      position: absolute; inset: 0; opacity: .05; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M30 0L60 30L30 60L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-size: 60px 60px;
+    }
+    .content {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+      min-height: 844px; padding: 32px 24px 28px; gap: 18px;
+    }
+    .content-top { display: flex; flex-direction: column; align-items: center; gap: 18px; width: 100%; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 400; color: #fff; text-align: center; line-height: 1.35; }
+    .desc { font-size: .875rem; font-weight: 300; color: #c9a96e; opacity: .9; text-align: center; max-width: 19rem; line-height: 1.6; margin-top: 10px; }
+    .cta-wrap { position: relative; width: 100%; max-width: 22rem; height: 98px; overflow: visible; margin-top: auto; flex-shrink: 0; }
+    .tiles {
+      position: absolute; left: 0; right: 0; top: 0; height: 68px;
+      display: flex; align-items: flex-start; justify-content: center;
+      overflow: visible; z-index: 0; pointer-events: none;
+    }
+    .tile {
+      width: 52px; height: 68px; border: 1px solid #c9a96e; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(145deg, hsl(220 38% 16%), hsl(220 42% 12%));
+      color: #c9a96e;
+      box-shadow: 0 6px 18px rgba(0,0,0,.35);
+      overflow: visible;
+    }
+    .tile.mid {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300;
+      transform: translate(0, 0);
+    }
+    .tile.l {
+      font-family: Inter, system-ui, sans-serif; font-size: 1.5rem; font-weight: 600;
+      transform: translate(-28px, 0) rotate(-14deg);
+    }
+    .tile.r {
+      font-family: Inter, system-ui, sans-serif; font-size: 1.5rem; font-weight: 600;
+      transform: translate(28px, 0) rotate(14deg); margin-left: -8px;
+    }
+    .btns {
+      position: absolute; left: 0; right: 0; top: 50px; height: 48px;
+      display: flex; gap: 8px; width: 100%; z-index: 10;
+    }
+    .btn {
+      flex: 1; height: 48px; min-height: 48px; border-radius: 8px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: .875rem; font-weight: 600; cursor: default;
+    }
+    .btn-primary { background: hsl(40 33% 96%); color: hsl(220 40% 20%); border: none; }
+    .btn-outline { background: hsl(220 40% 20%); color: #fff; border: 1px solid #c9a96e; font-weight: 500; }
+    .badge-wrap { width: 100%; max-width: 280px; }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="pattern"></div>
+    <div class="content">
+      <div class="content-top">
+      <div class="badge-wrap">
+        <svg viewBox="0 0 260 178" width="100%" role="img" aria-label="Morain Mahj badge">
+          <path d="M 14,44 H 246 L 260,58 V 152 L 246,166 H 14 L 0,152 V 58 Z" fill="hsl(220 40% 20%)" stroke="#c9a96e" stroke-width="1"/>
+          <path d="M 19,49 H 241 L 255,63 V 147 L 241,161 H 19 L 5,147 V 63 Z" fill="none" stroke="#c9a96e" stroke-width="0.75" opacity="0.65"/>
+          <g transform="translate(130, 48) rotate(45)">
+            <rect x="-26" y="-26" width="52" height="52" fill="hsl(220 40% 20%)" stroke="#c9a96e" stroke-width="1.25"/>
+            <rect x="-19" y="-19" width="38" height="38" fill="none" stroke="#c9a96e" stroke-width="0.75" opacity="0.65"/>
+          </g>
+          <text x="130" y="48" text-anchor="middle" dominant-baseline="middle" font-family="'Cormorant Garamond', serif" font-weight="300" font-size="30" fill="#c9a96e">M</text>
+          <text x="130" y="106" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="300" font-size="27" letter-spacing="6" fill="#c9a96e">MORAIN</text>
+          <text x="130" y="132" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-weight="300" font-size="27" letter-spacing="6" fill="#c9a96e">MAHJ</text>
+          <text x="130" y="154" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="10" letter-spacing="1.4" fill="#c9a96e">LEGACY GAME FOR MODERN</text>
+          <text x="130" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="10" letter-spacing="1.4" fill="#c9a96e">PLAYERS</text>
+        </svg>
+      </div>
+      <div>
+        <h1>Your Game. Your Scores. Your Community.</h1>
+        <p class="desc">Register for tournaments, track your scores in real time, and see where you stand on the leaderboard — all in one place.</p>
+      </div>
+      </div>
+      <div class="cta-wrap">
+        <div class="tiles">
+          <div class="tile l">$</div>
+          <div class="tile mid">M</div>
+          <div class="tile r">$</div>
+        </div>
+        <div class="btns">
+          <button class="btn btn-primary">Join Free</button>
+          <button class="btn btn-outline">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

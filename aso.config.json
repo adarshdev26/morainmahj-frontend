@@ -1,0 +1,55 @@
+{
+  "appName": "Morain Mahj",
+  "appId": "com.base69de6b05c2b11218fcffdf31.app",
+  "aso": {
+    "app_name": "Morain Mahj",
+    "subtitle": "Mah Jongg Tournament & League",
+    "promotional_text": "Run Mah Jongg tournaments, leagues & classes. Registration, scoring, leaderboards, raffles, and club management — all in one app.",
+    "description": "Morain Mahj is the all-in-one platform for American Mah Jongg tournament, league, and class management.
+
+Designed for directors, club organizers, and players of the National Mah Jongg League (NMJL), Morain Mahj handles every aspect of running and participating in Mah Jongg events:
+
+• TOURNAMENT MANAGEMENT — Create tournaments with custom flights, player caps, and waitlists. Automated table assignments with East player verification. Real-time scorekeeping with support for negative scores. Live leaderboards and prize tracking.
+
+• LEAGUE MANAGEMENT — Run seasonal leagues with session scheduling, RSVP management, automated table assignments, player rankings, and prize payouts. Members can RSVP, view assignments, and track standings from their phone.
+
+• CLASSES & COURSES — Instructors can create multi-lesson courses, enroll students, schedule lessons, share teaching materials, and manage waitlists.
+
+• PLAYER FEATURES — View your tournament history, track your stats and rankings, receive push notifications for check-in opens and table assignments, and access your scorecard in real time.
+
+• RAFFLES & SILENT AUCTIONS — Run 50/50 draws, T-raffles, general raffles, and silent auctions with live running totals and winner selection.
+
+• CLUB & ORGANIZATION MANAGEMENT — White-label branding, multi-organizer support, broadcast communications, and community feed with moderation tools.
+
+• PUBLIC WEBSITES — Every tournament, league, and course gets its own customizable public website with registration, schedules, sponsors, and gallery.
+
+KEYWORDS: mah jong, mahjong, mah jongg, American Mahjong, NMJL, National Mah Jongg League, tournament management, league management, scoring, leaderboards, player rankings, club management.
+
+Morain Mahj supports NMJL rules with tournament-level and custom rule variants. Whether you're running a casual club night or a large-scale tournament, Morain Mahj makes it effortless.",
+    "keywords": [
+      "mah jong",
+      "mahjong",
+      "mah jongg",
+      "american mahjong",
+      "american mah jongg",
+      "nmjl",
+      "national mah jongg league",
+      "mah jong tournament",
+      "mahjong tournament",
+      "mah jong league",
+      "mahjong league",
+      "tournament management",
+      "league management",
+      "mahjong scoring",
+      "player rankings",
+      "elo rankings",
+      "tournament software",
+      "club management"
+    ],
+    "keywords_field": "mahjong,mah jong,mah jongg,american mahjong,nmjl,tournament,league,scoring,rankings,club,management,national mah jongg league",
+    "primary_category": "SPORTS",
+    "secondary_category": "UTILITIES",
+    "content_rating": "4+",
+    "keywords_notes": "Apple's keywords field has a 100-character limit. Duplicates between app name/subtitle and keywords are removed per Apple ASO best practices. 'mahjong' covers 'mah jong' and 'mah jongg' in search per Apple's matching algorithm."
+  }
+}
